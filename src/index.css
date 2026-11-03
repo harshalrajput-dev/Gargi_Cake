@@ -1,0 +1,1611 @@
+/* --- ગ્લોબલ રીસેટ અને ફોન્ટ્સ --- */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #fdfbf7;
+    color: #333;
+}
+
+/* --- LUXURY NAVBAR UPGRADE (ગોલ્ડન એલિગન્ટ મેનૂ) --- */
+header {
+    background-color: #0b0914; /* ડાર્ક પ્રીમિયમ બેકગ્રાઉન્ડ */
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2); /* પાતળી ગોલ્ડન બોર્ડર */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    cursor: pointer;
+    background: linear-gradient(45deg, #f3e5ab, #d4af37, #aa7c11); /* રોયલ ગોલ્ડ ગ્રેડિએન્ટ */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #e0e0e0;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #d4af37; /* હોવર કરવા પર ગોલ્ડન કલર */
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.cart-counter {
+    background: linear-gradient(135deg, #d4af37, #aa7c11); /* ગોલ્ડન કાર્ટ કાઉન્ટર */
+    color: #000;
+    border-radius: 50%;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 800;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+}
+
+/* --- HERO SECTION LAYOUT (Cake Left, Text Right) --- */
+.hero {
+    height: 90vh;
+    position: relative;
+    display: flex;
+    flex-direction: row; /* આનાથી કેક ડાબે અને લખાણ જમણે સેટ થશે */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+    background: #0f0c1b; /* રોયલ ડાર્ક બેકગ્રાઉન્ડ */
+    overflow: hidden;
+}
+
+#cake-3d-container {
+    position: absolute;
+    top: 0;
+    left: 0px; 
+    width: calc(100% - 100px);
+    height: 100%;
+    z-index: 1;
+}
+
+/* 3D કંટ્રોલ્સ સ્ટાઇલ */
+.view-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    z-index: 10;
+    display: flex;
+    gap: 10px;
+}
+
+.view-controls button {
+    background: rgba(11, 9, 20, 0.8);
+    border: 1px solid #d4af37;
+    color: white;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 13px;
+    transition: all 0.3s;
+}
+
+.view-controls button:hover {
+    background: #d4af37;
+    color: black;
+}
+
+.hero-content {
+    position: relative;
+    flex: 1;
+    max-width: 550px;
+    margin-left: auto; /* લખાણને જમણી બાજુ રાખવા માટે */
+    z-index: 2; 
+    color: white;
+    pointer-events: none; 
+}
+
+/* બટન ક્લિક કરવા દેવા માટે પોઇન્ટર ઇવેન્ટ્સ ઓન */
+.hero-content h1, .hero-content p, .hero-content .luxury-badge, .hero-content .hero-btns {
+    pointer-events: auto;
+}
+
+.luxury-badge {
+    background: linear-gradient(45deg, #d4af37, #aa7c11);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.hero h1 {
+    font-size: 56px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.15;
+    background: linear-gradient(to right, #ffffff, #ffe3ec);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.hero p {
+    font-size: 18px;
+    color: #b0b5c0;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    padding: 16px 42px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-details {
+    background-color: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn-details:hover {
+    background-color: white;
+    color: #0f0c1b;
+    transform: translateY(-5px);
+}
+
+.btn-order {
+    background: linear-gradient(45deg, #d4af37, #aa7c11); /* ગોલ્ડન ઓર્ડર બટન */
+    color: black;
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+}
+
+.btn-order:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(212, 175, 55, 0.5);
+}
+
+/* --- ABOUT SECTION --- */
+.about-section {
+    padding: 100px 10%;
+    background-color: #fff;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 40px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+}
+
+.about-section h2::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background: #d4af37;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* --- ABOUT CONTAINER (FLEXBOX FOR SIDE-BY-SIDE LAYOUT) --- */
+.about-container {
+    max-width: 1100px;
+    margin: 50px auto 0;
+    display: flex;
+    align-items: flex-start; /* 'center' ની જગ્યાએ 'flex-start' કરવાથી ઈમેજ થોડી ઉપર આવી જશે */
+    justify-content: center;
+    gap: 40px;
+    text-align: left;
+    padding-top: 20px; /* ઉપર થોડી સ્પેસ આપવા માટે */
+}
+
+/* નાની રાઉન્ડ પ્રોફાઈલ ફ્રેમ */
+.about-owner-profile {
+    position: relative;
+    flex-shrink: 0;
+    margin-top: 10px; /* આનાથી તમે ઈમેજને પરફેક્ટ ઉપર-નીચે સેટ કરી શકશો */
+}
+
+.about-owner-profile img {
+    width: 250px;  /* સરખી વિડ્થ */
+    height: 250px; /* સરખી હાઇટ કરવાથી ઈમેજ દબાશે નહિ અને આખી દેખાશે */
+    object-fit: contain; /* 'cover' ની જગ્યાએ 'contain' કરવાથી આખી ઈમેજ અંદર ફિટ થઈ જશે */
+    background-color: #f9f9f9; /* જો ઈમેજ નાની થાય તો બેકગ્રાઉન્ડ સેટ કરવા માટે (ઓપ્શનલ) */
+    border-radius: 50%; /* 70% ની જગ્યાએ 50% કરવાથી પર્ફેક્ટ રાઉન્ડ સર્કલ બનશે */
+    border: 3px solid #d4af37; /* રોયલ ગોલ્ડન બોર્ડર */
+    box-shadow: 5px 4px 6px rgba(212, 175, 55, 0.25);
+    transition: transform 0.3s ease;
+}
+
+.about-owner-profile:hover img {
+    transform: scale(1.05); /* માઉસ લાવવા પર હલકો ઝૂમ ગ્લો */
+}
+
+/* નાનું સુંદર બૅજ */
+.profile-badge {
+    position: absolute;
+    bottom: -10px; /* ઈમેજ ગોળ થવાથી બૅજની પોઝિશન સેટ કરી */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0b0914;
+    color: #d4af37;
+    border: 1px solid #d4af37;
+    padding: 4px 11px;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 15px;
+    white-space: nowrap;
+    letter-spacing: 1px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+/* મોબાઈલ વ્યુ માટે */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        align-items: center; /* મોબાઈલમાં સેન્ટર જ રહેશે */
+    }
+}
+
+.about-text p {
+    font-size: 18px;
+    line-height: 1.9;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.about-features {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.feature-box {
+    background: #fdfbf7;
+    padding: 30px 20px;
+    border-radius: 15px;
+    flex: 1;
+    border: 1px solid rgba(0,0,0,0.03);
+    transition: transform 0.3s;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+}
+
+/* --- PRODUCTS CARD SECTION --- */
+.products-section {
+    padding: 100px 4%;
+    background-color: #f4f6f8;
+}
+
+.section-title {
+    font-size: 38px;
+    margin-bottom: 50px;
+    color: #2c3e50;
+    text-align: center;
+    font-weight: 800;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.product-card {
+    background: white;
+    padding: 18px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+}
+
+.product-card:hover {
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    transform: translateY(-8px);
+}
+
+.product-image {
+    height: 200px;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.1);
+}
+
+.product-title {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #2c3e50;
+    min-height: 45px;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: 800;
+    color: #B12704;
+    margin-bottom: 10px;
+}
+
+.prime-badge {
+    font-size: 12px;
+    color: #c29200;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* --- ACTION BUTTONS INSIDE CARD (ADD TO CART, DETAILS, BUY NOW) --- */
+.card-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.btn-action {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s;
+}
+
+.btn-add-cart {
+    background: #fff;
+    border: 2px solid #ff8f00;
+    color: #ff8f00;
+}
+
+.btn-add-cart:hover {
+    background: #ffe3c4;
+}
+
+.btn-view-det {
+    background: #e4e7eb;
+    color: #333;
+}
+
+.btn-view-det:hover {
+    background: #cbd2d9;
+}
+
+.btn-buy-now {
+    background: linear-gradient(135deg, #ffa41c, #ff8f00);
+    color: white;
+    box-shadow: 0 4px 10px rgba(255, 143, 0, 0.2);
+}
+
+.btn-buy-now:hover {
+    background: linear-gradient(135deg, #ffb300, #ff6f00);
+}
+
+/* --- MODAL DIALOG POPUPS (FOR DETAILS & FOR ORDER FORM) --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 35px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 550px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #aaa;
+    transition: 0.2s;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+.modal-content h2 {
+    color: #0b0914;
+}
+
+.modal-content h3 {
+    margin-top: 15px;
+    color: #ff8f00;
+    font-size: 16px;
+}
+
+.modal-content p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* --- PREMIUM WHATSAPP ORDER MODAL --- */
+body.modal-open {
+    overflow: hidden;
+}
+
+.order-modal {
+    padding: 24px;
+}
+
+.order-modal .whatsapp-order-content {
+    background: linear-gradient(160deg, #fffdf8 0%, #ffffff 45%, #fbf6ea 100%);
+    max-width: 820px;
+    width: 100%;
+    max-height: 92vh;
+    overflow-y: auto;
+    padding: 0;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 24px;
+    box-shadow: 0 30px 80px rgba(11, 9, 20, 0.45), 0 0 0 6px rgba(255, 255, 255, 0.06);
+    position: relative;
+    animation: none;
+    transform: translateY(26px) scale(0.98);
+    opacity: 0;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
+    scrollbar-width: thin;
+    scrollbar-color: #d4af37 #f6efdf;
+}
+
+.order-modal.is-open .whatsapp-order-content {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+.order-modal .whatsapp-order-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.order-modal .whatsapp-order-content::-webkit-scrollbar-thumb {
+    background: #d4af37;
+    border-radius: 10px;
+}
+
+.order-close-btn {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    z-index: 5;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.order-close-btn:hover {
+    background: #d4af37;
+    color: #0b0914;
+    transform: rotate(90deg);
+}
+
+.order-modal-header {
+    padding: 32px 34px 26px;
+    background:
+        radial-gradient(circle at 88% 0%, rgba(212, 175, 55, 0.3), transparent 42%),
+        linear-gradient(135deg, #0b0914 0%, #1b1530 70%, #2a2140 100%);
+    color: #ffffff;
+    border-radius: 24px 24px 0 0;
+    position: relative;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.45);
+}
+
+.order-eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #e6c96a;
+    margin-bottom: 10px;
+}
+
+.order-modal-header h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 8px;
+    background: linear-gradient(90deg, #ffffff, #f3e5ab 55%, #d4af37);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.order-modal-header p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #c7c1d6;
+    max-width: 560px;
+    margin: 0;
+}
+
+.order-product-preview {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 24px 34px;
+    background: rgba(255, 255, 255, 0.7);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.22);
+}
+
+.order-product-image-wrap {
+    width: 104px;
+    height: 104px;
+    flex-shrink: 0;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 2px solid #d4af37;
+    background: #f6efdf;
+    box-shadow: 0 10px 24px rgba(11, 9, 20, 0.14);
+}
+
+.order-product-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.order-product-meta {
+    min-width: 0;
+}
+
+.preview-label {
+    display: block;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    color: #9a7b1e;
+    margin-bottom: 5px;
+}
+
+.order-product-meta h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px;
+    line-height: 1.25;
+    color: #211b12;
+    margin: 0 0 6px;
+}
+
+.preview-price-row {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+}
+
+.preview-price {
+    font-size: 22px;
+    font-weight: 800;
+    color: #b12704;
+}
+
+.preview-price-note {
+    font-size: 12px;
+    color: #8a7a58;
+    font-weight: 600;
+}
+
+.whatsapp-order-content form {
+    padding: 24px 34px 10px;
+}
+
+.order-section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    color: #8a6d1d;
+    margin: 6px 0 16px;
+}
+
+.order-section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(212, 175, 55, 0.6), rgba(212, 175, 55, 0));
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 18px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+.form-group.full {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    margin-bottom: 7px;
+    color: #413722;
+}
+
+.required-mark {
+    color: #c0392b;
+}
+
+.optional-mark {
+    color: #9b917c;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid #e4dcc9;
+    border-radius: 12px;
+    font-size: 14px;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    color: #2a2418;
+    background: #ffffff;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.form-group select {
+    background-image:
+        linear-gradient(45deg, transparent 50%, #8a6d1d 50%),
+        linear-gradient(135deg, #8a6d1d 50%, transparent 50%);
+    background-position:
+        calc(100% - 19px) calc(50% - 2px),
+        calc(100% - 14px) calc(50% - 2px);
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+    padding-right: 38px;
+}
+
+.time-picker {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) minmax(0, 1.15fr);
+    align-items: center;
+    gap: 6px;
+}
+
+.time-picker select {
+    padding-left: 10px;
+    padding-right: 26px;
+    text-align: center;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+.time-separator {
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1;
+    color: #8a6d1d;
+}
+
+.form-group .time-helper {
+    margin: 6px 0 0;
+    font-size: 11px;
+    line-height: 1.45;
+    font-weight: 500;
+    color: #9b917c;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 84px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #d4af37;
+    background: #fffdf8;
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.16);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #b0a58f;
+}
+
+.form-group .input-error {
+    border-color: #d64545 !important;
+    background: #fffafa !important;
+    box-shadow: 0 0 0 4px rgba(214, 69, 69, 0.1) !important;
+}
+
+.form-error {
+    display: none;
+    margin: 0 0 20px;
+    padding: 12px 15px;
+    border-radius: 12px;
+    background: #fdecea;
+    color: #9f2320;
+    border: 1px solid #f5c2c0;
+    font-size: 13.5px;
+    font-weight: 600;
+    line-height: 1.55;
+    white-space: pre-line;
+}
+
+.form-error.show {
+    display: block;
+    animation: errorIn 0.25s ease;
+}
+
+@keyframes errorIn {
+    from { transform: translateY(-6px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.order-price-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    background: linear-gradient(135deg, #fff8e7, #fffdf8);
+    border: 1px solid rgba(212, 175, 55, 0.45);
+    border-radius: 16px;
+    padding: 16px 18px;
+    margin: 8px 0 22px;
+}
+
+.price-panel-label {
+    display: block;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #9a7b1e;
+    margin-bottom: 2px;
+}
+
+.order-price-panel strong {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 26px;
+    color: #b12704;
+    line-height: 1;
+}
+
+.order-price-panel p {
+    margin: 0;
+    max-width: 340px;
+    font-size: 12.5px;
+    line-height: 1.5;
+    font-weight: 600;
+    color: #7b6a45;
+    text-align: right;
+}
+
+.order-actions {
+    padding: 0 0 6px;
+}
+
+.btn-whatsapp-order {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: none;
+    border-radius: 14px;
+    padding: 16px 22px;
+    background: linear-gradient(135deg, #25d366 0%, #1bae56 55%, #128c4a 100%);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    box-shadow: 0 14px 30px rgba(37, 211, 102, 0.28);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+
+.btn-whatsapp-order:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 36px rgba(37, 211, 102, 0.38);
+    filter: brightness(1.03);
+}
+
+.btn-whatsapp-order:active {
+    transform: translateY(0);
+}
+
+.wa-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    font-size: 17px;
+}
+
+.order-secondary-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.btn-call-bakery,
+.btn-share-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 48px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.22s ease;
+}
+
+.btn-call-bakery {
+    background: #0b0914;
+    color: #f3e5ab;
+    border: 1px solid #2a2340;
+}
+
+.btn-call-bakery:hover {
+    background: #1b1530;
+    border-color: #d4af37;
+    transform: translateY(-1px);
+}
+
+.btn-share-image {
+    background: #ffffff;
+    color: #8a6d1d;
+    border: 1.5px solid #d4af37;
+}
+
+.btn-share-image:hover {
+    background: #fff8e7;
+    transform: translateY(-1px);
+}
+
+.order-actions .image-share-note {
+    margin: 14px 2px 2px;
+    font-size: 11.5px;
+    line-height: 1.55;
+    color: #91866f;
+    text-align: center;
+}
+
+.whatsapp-order-content {
+    font-family: 'Inter', 'Noto Sans Gujarati', 'Noto Sans Devanagari', 'Segoe UI', sans-serif;
+}
+
+.order-language-bar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+    margin-top: 18px;
+}
+
+.language-label {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    color: #c7c1d6;
+}
+
+.language-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.language-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 13px;
+    border-radius: 999px;
+    border: 1px solid rgba(212, 175, 55, 0.45);
+    background: rgba(255, 255, 255, 0.08);
+    color: #f3e5ab;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.3;
+    cursor: pointer;
+    transition: background 0.22s ease, color 0.22s ease, border-color 0.22s ease, transform 0.22s ease;
+}
+
+.language-btn:hover {
+    background: rgba(212, 175, 55, 0.22);
+    border-color: #d4af37;
+    transform: translateY(-1px);
+}
+
+.language-btn.is-active {
+    background: linear-gradient(135deg, #e6c96a, #d4af37);
+    color: #0b0914;
+    border-color: #d4af37;
+    box-shadow: 0 6px 16px rgba(212, 175, 55, 0.28);
+}
+
+.gps-card {
+    margin-top: 2px;
+    padding: 16px 18px;
+    border-radius: 16px;
+    border: 1px dashed rgba(212, 175, 55, 0.6);
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.08), rgba(255, 255, 255, 0.8));
+}
+
+.gps-card [hidden] {
+    display: none !important;
+}
+
+.gps-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.gps-pin {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    background: #0b0914;
+    color: #f3e5ab;
+    font-size: 18px;
+    box-shadow: 0 8px 18px rgba(11, 9, 20, 0.18);
+}
+
+.gps-card-header h3 {
+    margin: 0 0 4px;
+    font-family: 'Inter', 'Noto Sans Gujarati', 'Noto Sans Devanagari', 'Segoe UI', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    color: #2a2418;
+    letter-spacing: 0;
+}
+
+.gps-card-header p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.55;
+    color: #746a54;
+}
+
+.gps-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 14px;
+}
+
+.gps-actions button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 40px;
+    padding: 9px 14px;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.3;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.gps-actions button:disabled {
+    opacity: 0.65;
+    cursor: wait;
+    transform: none;
+}
+
+.btn-gps-detect {
+    background: #0b0914;
+    color: #f3e5ab;
+    border: 1px solid #2a2340;
+}
+
+.btn-gps-detect:hover:not(:disabled) {
+    background: #1b1530;
+    border-color: #d4af37;
+    transform: translateY(-1px);
+}
+
+.btn-gps-refresh {
+    background: #ffffff;
+    color: #8a6d1d;
+    border: 1.5px solid #d4af37;
+}
+
+.btn-gps-refresh:hover {
+    background: #fff8e7;
+    transform: translateY(-1px);
+}
+
+.btn-gps-clear {
+    background: #ffffff;
+    color: #9f2320;
+    border: 1px solid #e5b4b0;
+}
+
+.btn-gps-clear:hover {
+    background: #fdecea;
+    border-color: #d64545;
+}
+
+.gps-card .gps-status {
+    margin: 10px 0 0;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #7b6a45;
+}
+
+.gps-card .gps-status.is-loading {
+    color: #8a6d1d;
+}
+
+.gps-card .gps-status.is-error {
+    color: #9f2320;
+}
+
+.gps-result {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: #ffffff;
+    border: 1px solid rgba(37, 211, 102, 0.35);
+    box-shadow: 0 6px 16px rgba(18, 140, 74, 0.07);
+}
+
+.gps-result-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+    font-size: 12px;
+    line-height: 1.45;
+    color: #5e563f;
+}
+
+.gps-result-info strong {
+    color: #1f7a43;
+    font-size: 12.5px;
+}
+
+#gpsCoords {
+    unicode-bidi: plaintext;
+}
+
+.btn-gps-map {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border-radius: 9px;
+    background: #e9f9f0;
+    color: #127a42;
+    border: 1px solid rgba(18, 140, 74, 0.25);
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-gps-map:hover {
+    background: #d7f4e4;
+    transform: translateY(-1px);
+}
+
+.gps-card .gps-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    margin: 12px 0 0;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #4d4432;
+    cursor: pointer;
+}
+
+.gps-card .gps-consent input {
+    width: auto;
+    min-width: 16px;
+    height: 16px;
+    margin: 2px 0 0;
+    padding: 0;
+    accent-color: #1bae56;
+    cursor: pointer;
+}
+
+.order-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 28px;
+    transform: translate(-50%, 24px);
+    z-index: 3500;
+    max-width: min(560px, calc(100% - 32px));
+    padding: 14px 20px;
+    border-radius: 14px;
+    background: #0b0914;
+    color: #f7f1df;
+    border: 1px solid rgba(212, 175, 55, 0.55);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+    font-size: 13.5px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.order-toast.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+@media (max-width: 640px) {
+    .order-modal {
+        padding: 10px;
+    }
+
+    .order-modal .whatsapp-order-content {
+        max-height: 95vh;
+        border-radius: 18px;
+    }
+
+    .order-modal-header {
+        padding: 26px 20px 20px;
+        border-radius: 18px 18px 0 0;
+    }
+
+    .order-modal-header h2 {
+        font-size: 27px;
+        padding-right: 36px;
+    }
+
+    .order-product-preview {
+        padding: 18px 20px;
+        gap: 14px;
+    }
+
+    .order-product-image-wrap {
+        width: 78px;
+        height: 78px;
+        border-radius: 14px;
+    }
+
+    .order-product-meta h3 {
+        font-size: 19px;
+    }
+
+    .whatsapp-order-content form {
+        padding: 20px 20px 8px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .form-group.full {
+        grid-column: auto;
+    }
+
+    .order-price-panel {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .order-price-panel p {
+        text-align: left;
+        max-width: none;
+    }
+
+    .order-secondary-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .time-picker {
+        gap: 4px;
+    }
+
+    .time-picker select {
+        padding-left: 8px;
+        padding-right: 22px;
+        font-size: 13px;
+    }
+
+    .order-language-bar {
+        align-items: flex-start;
+    }
+
+    .language-options {
+        width: 100%;
+    }
+
+    .language-btn {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .gps-card {
+        padding: 14px;
+    }
+
+    .gps-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .gps-actions button {
+        width: 100%;
+    }
+
+    .gps-result {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .btn-gps-map {
+        width: 100%;
+    }
+
+    .order-close-btn {
+        top: 12px;
+        right: 12px;
+        width: 38px;
+        height: 38px;
+    }
+
+    .order-toast {
+        bottom: 90px;
+    }
+}
+
+/* --- CONTACT & FOOTER --- */
+.contact-section {
+    padding: 100px 10%;
+    background-color: #fff;
+    text-align: center;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.contact-item a {
+    color: #8a6d1d;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-item a:hover {
+    color: #b12704;
+}
+
+.contact-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 36px;
+}
+
+.btn-contact-call,
+.btn-contact-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 190px;
+    padding: 14px 26px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.btn-contact-call {
+    background: #0b0914;
+    color: #f3e5ab;
+    border: 1px solid #d4af37;
+}
+
+.btn-contact-call:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(11, 9, 20, 0.25);
+}
+
+.btn-contact-whatsapp {
+    background: linear-gradient(135deg, #25d366, #128c4a);
+    color: #ffffff;
+    border: 1px solid rgba(18, 140, 74, 0.4);
+    box-shadow: 0 10px 24px rgba(37, 211, 102, 0.22);
+}
+
+.btn-contact-whatsapp:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(37, 211, 102, 0.32);
+}
+
+.floating-contact {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 1500;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.float-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 22px;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.float-btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.34);
+}
+
+.float-whatsapp {
+    background: linear-gradient(135deg, #25d366, #128c4a);
+}
+
+.float-call {
+    background: #0b0914;
+    border: 1px solid rgba(212, 175, 55, 0.65);
+    color: #f3e5ab;
+}
+
+.float-label {
+    display: none;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+@media (min-width: 768px) {
+    .float-btn {
+        width: auto;
+        height: 48px;
+        border-radius: 999px;
+        padding: 0 18px;
+        font-size: 17px;
+    }
+
+    .float-label {
+        display: inline;
+    }
+}
+
+footer {
+    background-color: #0f0c1b;
+    color: #8b94a5;
+    padding: 50px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* --- RESPONSIVE RESPONSIVENESS (મોબાઈલ માટે) --- */
+@media (max-width: 1200px) {
+    .product-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 992px) {
+    .hero { 
+        flex-direction: column; /* મોબાઈલમાં ઉપર નીચે થઈ જશે */
+        text-align: center; 
+        padding-top: 50px;
+    }
+    .hero-content { 
+        margin-left: auto; 
+        margin-right: auto;
+        margin-top: -60px; 
+    }
+    .hero-btns { justify-content: center; }
+    .product-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 576px) {
+    .product-grid { grid-template-columns: 1fr; }
+    header { padding: 15px 20px; flex-direction: column; gap: 15px; }
+    .hero h1 { font-size: 36px; }
+}
+
+/* --- REACT MIGRATION ADDITIONS --- */
+.modal.is-visible {
+    display: flex;
+}
+
+.rating {
+    color: #c29200;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.btn-order {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.not-found {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 40px;
+    text-align: center;
+    background-color: #0f0c1b;
+    color: #f3e5ab;
+}
+
+.not-found h1 {
+    font-size: 96px;
+    line-height: 1;
+    background: linear-gradient(45deg, #f3e5ab, #d4af37, #aa7c11);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.not-found p {
+    color: #b0b5c0;
+    font-size: 17px;
+}

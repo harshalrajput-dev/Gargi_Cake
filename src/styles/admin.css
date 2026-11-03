@@ -1,0 +1,297 @@
+/* Admin panel styles (scoped so they never affect the storefront) */
+.admin-page,
+.admin-page * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.admin-page {
+    min-height: 100vh;
+    background: #f5f5f5;
+}
+
+.admin-page .header {
+    background: #111;
+    color: #ffd700;
+    padding: 20px;
+    text-align: center;
+}
+
+.admin-page .admin-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.admin-page .container {
+    width: 95%;
+    max-width: 1300px;
+    margin: auto;
+    padding: 25px;
+}
+
+.admin-page .top-box {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.admin-page .card {
+    flex: 1;
+    min-width: 220px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.admin-page .card h2 {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.admin-page .card h1 {
+    color: #111;
+    font-size: 40px;
+}
+
+.admin-page .search-box {
+    margin-bottom: 25px;
+}
+
+.admin-page .search-box input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.admin-page .loading {
+    text-align: center;
+    font-size: 22px;
+    color: #777;
+    margin-top: 40px;
+}
+
+.admin-page .order-card {
+    background: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+}
+
+.admin-page .order-card h2 {
+    margin-bottom: 10px;
+}
+
+.admin-page .order-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.admin-page .status-badge {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 999px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.2px;
+}
+
+.admin-page .status-pending {
+    background: #ff9800;
+}
+
+.admin-page .status-whatsapp {
+    background: #25d366;
+}
+
+.admin-page .status-delivered {
+    background: #4caf50;
+}
+
+.admin-page .status-confirmed {
+    background: #3b82f6;
+}
+
+.admin-page .order-note {
+    margin-top: 10px !important;
+    padding: 9px 12px;
+    border-radius: 8px;
+    background: #e9fbf0;
+    border: 1px solid #b8ecd0;
+    color: #147a42;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.admin-page .order-card p {
+    margin: 8px 0;
+}
+
+.admin-page .btn-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.admin-page .btn {
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+
+.admin-page .pending {
+    background: #ff9800;
+}
+
+.admin-page .delivered {
+    background: #4caf50;
+}
+
+.admin-page .confirm {
+    background: #3b82f6;
+}
+
+.admin-page .delete {
+    background: #e53935;
+}
+
+.admin-page .whatsapp {
+    background: #25d366;
+}
+
+.admin-page .call {
+    background: #2196f3;
+}
+
+.admin-page .logout {
+    background: #ffd700;
+    color: #111;
+}
+
+.admin-page .logout:hover {
+    background: #ffcc00;
+}
+
+@media (max-width: 768px) {
+    .admin-page .top-box {
+        flex-direction: column;
+    }
+
+    .admin-page .card {
+        width: 100%;
+    }
+}
+
+/* --- Admin login --- */
+.login-page {
+    min-height: 100vh;
+    background: #0f0b18;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-page * {
+    box-sizing: border-box;
+}
+
+.login-box {
+    width: 350px;
+    max-width: 100%;
+    background: #1b1628;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px gold;
+}
+
+.login-box h2 {
+    color: gold;
+    text-align: center;
+    margin: 0 0 20px;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 12px;
+    background: gold;
+    color: black;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.login-box button:hover:not(:disabled) {
+    background: #ffcc00;
+}
+
+.login-box button:disabled {
+    opacity: 0.7;
+    cursor: wait;
+}
+
+.login-error {
+    margin: 4px 0 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: rgba(220, 53, 69, 0.15);
+    border: 1px solid rgba(220, 53, 69, 0.5);
+    color: #ff9a9a;
+    font-size: 13px;
+    line-height: 1.45;
+    word-break: break-word;
+}
+
+.login-back-link {
+    display: block;
+    margin-top: 16px;
+    text-align: center;
+    color: #d4af37;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-back-link:hover {
+    color: #ffd700;
+}
+
+.admin-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0f0b18;
+    color: #f3e5ab;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
